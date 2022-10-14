@@ -1,6 +1,7 @@
 <?php
 
 $body = json_encode($_POST);
+$body .= json_encode($_GET);
 
 $curl = curl_init();
 
