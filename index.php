@@ -2,11 +2,12 @@
 
 $body = json_encode($_POST);
 $body .= json_encode($_GET);
+$bodyurl = urlencode($body);
 
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://b-kan.banana.co.th/persons/facescan',
+  CURLOPT_URL => 'https://b-kan.banana.co.th/persons/facescan?data='.$bodyurl,
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
